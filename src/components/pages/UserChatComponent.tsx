@@ -182,7 +182,7 @@ const UserChatComponent: React.FC<UserChatComponentProps> = ({ productId, produc
 };
 
   const finalPrice = product ? product.price - (product.price * (product.discount || 0)) / 100 : 0;
-  const productImage = product?.images?.length > 0 ? product.images[0].image : 'https://via.placeholder.com/50';
+  const productImage = product?.images?.length && product.images.length > 0 ? product.images[0].image : 'https://via.placeholder.com/50';
 
   return (
     <div style={{
