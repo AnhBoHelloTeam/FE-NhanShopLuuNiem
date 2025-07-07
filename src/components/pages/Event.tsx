@@ -121,7 +121,7 @@ const EventPage = () => {
                     marginTop: '20px',
                   }}
                 >
-                  {event.products.map((product) => (
+                  {event.products.map((product: any) => (
                     <ProductCard key={product._id} product={product} />
                   ))}
                 </div>
