@@ -47,7 +47,7 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem('token');
 
-        const response = await fetch("http://localhost:3000/api/v1/users", {
+        const response = await fetch("https://be-webdoluuniem.onrender.com/api/v1/users", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ const Dashboard = () => {
   const fetchProductList = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3000/api/v1/products', {
+      const response = await fetch('https://be-webdoluuniem.onrender.com/api/v1/products', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
