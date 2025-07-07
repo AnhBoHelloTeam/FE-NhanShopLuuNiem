@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../pages/ProductCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const EventPage = () => {
@@ -119,7 +121,7 @@ const EventPage = () => {
                     marginTop: '20px',
                   }}
                 >
-                  {event.products.map((product: any) => (
+                  {event.products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                   ))}
                 </div>
