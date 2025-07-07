@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import io, { Socket } from 'socket.io-client';
-import { jwtDecode } from 'jwt-decode';
 import toast from 'react-hot-toast';
 interface Chat {
   _id: string;

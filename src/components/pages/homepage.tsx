@@ -6,7 +6,7 @@ import Banner from '../Banner';
 import WhyChooseUs from '../WhyChooseUs';
 import DealsSection from '../DealsSection';
 import EventPage from './Event';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CategoryList from '../category';
 
 const Home: React.FC = () => {
