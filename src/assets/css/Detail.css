@@ -51,8 +51,10 @@ padding: 8px 16px;
 }
 .danhgia :hover{
       background-color: #43a047; /* xanh đậm hơn khi hover */
+<<<<<<< HEAD
 }
-
+=======
+}
 
 .zoomable-image {
   max-height: 100%;
@@ -86,3 +88,4 @@ padding: 8px 16px;
   transform: scale(1.5); /* 👈 phóng to 150% */
   cursor: zoom-in;
 }
+>>>>>>> recovered-cod
