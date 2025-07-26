@@ -1,7 +1,7 @@
 import  {useState } from "react";
 import { Bar } from "react-chartjs-2";
 import { Store, LogOut, MessageCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import {
   Chart as ChartJS,
@@ -20,6 +20,7 @@ import BlogManagement from "./admin/BlogManagement";
 import CouponManagement from "./admin/CouponManagement";
 import CategoryManagement from "./admin/CategoryManagement";
 import ProductManagement from "./admin/ProductManagement";
+import ReviewManagement from "./admin/ReviewManager";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -62,7 +63,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <aside className="sidebar">
-        <div className="sidebar-header">🛒 Cửa Hàng Đặc Sản</div>
+        <Link style={{textDecoration: 'none'}} to='/'><div className="sidebar-header">🛒 Cửa Hàng Đặc Sản</div></Link>
         <nav className="sidebar-menu">
   <div 
     onClick={() => setActiveSection('dashboard')} 
@@ -124,7 +125,7 @@ const Dashboard = () => {
     onClick={() => setActiveSection('events')} 
     className={activeSection === 'events' ? 'menu-highlight active' : 'menu-highlight'}
   >
-    🏷️ quản lí sự kiện
+    🏷️ Quản lí sự kiện
   </div>
 
   <div 
@@ -163,6 +164,7 @@ const Dashboard = () => {
           {activeSection === 'stores' && '🏪 Gian hàng'}
           {activeSection === 'events' && '🏷️ quản lí sự kiện'}
           {activeSection === 'products' && '🛒 quản lí sản phẩm'}
+          {activeSection === 'reviews' && '🏪 quản lí đánh giá'}
         </h1>
 
         {/* Nội dung từng phần */}
@@ -246,6 +248,8 @@ const Dashboard = () => {
 {activeSection === 'categories' && <CategoryManagement />}
         {/*mã giảm giá*/}
 {activeSection === 'coupons' && <CouponManagement />}
+        {/*đánh giá*/}
+{activeSection === 'reviews' && <ReviewManagement />}
       </main>
     </div>
   );

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import {CreateProductSuccess, DeleteProductSuccess, UpdateProductSuccess, ConfirmDeleteDialog} from '../../PaymentSuccess';
 
 const CouponManagement = () => {
   const [couponList, setCouponList] = useState<any[]>([]);
@@ -9,6 +10,11 @@ const CouponManagement = () => {
     discount: 0,
     expiryDate: "",
   });
+  const [showCreateSuccess, setShowCreateSuccess] = useState(false);
+  const [showUpdateSuccess, setShowUpdateSuccess] = useState(false);
+  const [showDeleteSuccess, setShowDeleteSuccess] = useState(false);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [pendingDelete, setPendingDelete] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchCouponList = async () => {
@@ -96,7 +102,7 @@ const CouponManagement = () => {
         );
         const data = await response.json();
         if (response.ok) {
-          alert("Cập nhật mã giảm giá thành công!");
+          setShowUpdateSuccess(true);
           setCouponList((prev) =>
             prev.map((c) => (c._id === editingCoupon._id ? data.data : c))
           );
@@ -118,6 +124,7 @@ const CouponManagement = () => {
         if (response.ok) {
           alert("Thêm mã giảm giá thành công!");
           setCouponList((prev) => [...prev, data.data]);
+          setShowCreateSuccess(true);
           handleCancel();
         } else {
           alert("Thêm mã giảm giá thất bại: " + (data.message || "Lỗi không xác định"));
@@ -129,8 +136,14 @@ const CouponManagement = () => {
     }
   };
 
+    const confirmDelete = (couponId: string) => {
+  setPendingDelete(couponId);
+  setShowConfirmDelete(true);
+};
   // Xóa mã giảm giá
-  const handleDeleteCoupon = async (couponId: string) => {
+  const handleDeleteCoupon = async () => {
+    if (!pendingDelete) return;
+
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Bạn cần đăng nhập");
@@ -141,7 +154,7 @@ const CouponManagement = () => {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`https://be-webdoluuniem.onrender.com/api/v1/coupons/${couponId}`, {
+      const response = await fetch(`https://be-webdoluuniem.onrender.com/api/v1/coupons/${pendingDelete}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -151,14 +164,17 @@ const CouponManagement = () => {
       const data = await response.json();
       if (response.ok) {
         alert("Đã xóa mã giảm giá thành công!");
-        setCouponList((prev) => prev.filter((c) => c._id !== couponId));
+        setCouponList((prev) => prev.filter((c) => c._id !== pendingDelete));
       } else {
         alert("Xóa mã giảm giá thất bại: " + (data.message || "Lỗi không xác định"));
       }
     } catch (error) {
       console.error("Lỗi khi xóa mã giảm giá:", error);
       alert("Đã xảy ra lỗi khi xóa mã giảm giá");
-    }
+    } finally {
+    setShowConfirmDelete(false);
+    setPendingDelete(null);
+  }
   };
 
   return (
@@ -235,7 +251,7 @@ const CouponManagement = () => {
                 </button>
                 <button
                   className="sp-btn-delete"
-                  onClick={() => handleDeleteCoupon(coupon._id)}
+                  onClick={() => confirmDelete(coupon._id)}
                 >
                   Xóa
                 </button>
@@ -244,6 +260,41 @@ const CouponManagement = () => {
           ))
         )}
       </div>
+      {showCreateSuccess && (
+        <CreateProductSuccess
+          message="Thêm danh mục thành công"
+          description="Danh mục mới đã được tạo."
+          buttonText="Đóng"
+          onClose={() => setShowCreateSuccess(false)}
+        />
+      )}
+      
+      {showUpdateSuccess && (
+        <UpdateProductSuccess
+          message="Cập nhật danh mục thành công"
+          description="Danh mục đã được chỉnh sửa."
+          buttonText="Đóng"
+          onClose={() => setShowUpdateSuccess(false)}
+        />
+      )}
+      
+      {showDeleteSuccess && (
+        <DeleteProductSuccess
+          message="Xóa danh mục thành công"
+          description="Danh mục đã bị xóa khỏi hệ thống."
+          buttonText="Đóng"
+          onClose={() => setShowDeleteSuccess(false)}
+        />
+      )}
+      {showConfirmDelete && (
+        <ConfirmDeleteDialog
+          onConfirm={handleDeleteCoupon}
+          onCancel={() => {
+            setShowConfirmDelete(false);
+            setPendingDelete(null);
+          }}
+        />
+      )}
     </div>
   );
 };

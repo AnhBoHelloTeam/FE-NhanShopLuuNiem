@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import '../assets/css/Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const LoginPage: React.FC = () => {
   const [emailOrPhone, setEmailOrPhone] = useState('');
   const [password, setPassword] = useState('');
@@ -41,12 +41,15 @@ const LoginPage: React.FC = () => {
 
       if (res.ok && data.success) {
         const token = data.data?.accessToken || '';
+        const refreshToken = data.data?.refreshToken;
         const role = (data.data?.role || '').toLowerCase();
         const name = data.data?.name?.trim() || 'Người dùng'
         const avatar = data.data?.avatar || '/images/default-avatar.png';
         const userId = data.data?.user_id || '';
         
         localStorage.setItem('token', token);
+        localStorage.setItem('refreshToken', refreshToken);
+        console.log('Refresh token hiện tại:', refreshToken);
         localStorage.setItem('userId', userId);
         localStorage.setItem('role', role);
         localStorage.setItem('username', name);
@@ -170,7 +173,7 @@ const LoginPage: React.FC = () => {
             <span>Bạn không có tài khoản?
               <Link to="/register">Đăng ký</Link>
             </span><br />
-            <a href="#">Quên mật khẩu?</a>
+            <a href="#">Quên mật khẩu?</a>https://be-webdoluuniem.onrender.com
           </div>
         </form>
 

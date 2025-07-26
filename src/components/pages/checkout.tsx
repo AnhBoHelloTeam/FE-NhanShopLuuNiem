@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../assets/css/checkout.css';
@@ -62,7 +63,7 @@ const Checkout: React.FC = () => {
         });
 
         const data = await res.json();
-              if (data.success && Array.isArray(data.cartDetails)) {
+        if (data.success && Array.isArray(data.cartDetails)) {
   const filteredCart = data.cartDetails.filter((item: any) => item.product_id !== null);
   setCart(filteredCart);
           console.log('Cart details:', data.cartDetails);
@@ -198,46 +199,148 @@ const handleCreateOrder = async () => {
     <div className="checkout-page">
       <form className="checkout-form" onSubmit={(e) => {e.preventDefault(); handleCreateOrder();}}>
         <h3>Thông tin vận chuyển</h3>
-        <div className="form-group">
+        {/* <div className="form-group">
           <label>Họ và tên</label>
-          <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Name" required />
-        </div>
+          <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Tên của bạn" required />
+        </div> */}
         <div className="form-row">
-          <div className="form-group">
+          <div className="form-group1">
+            <label><strong>Họ và tên</strong></label>
+            <input type="text" className="form-control" placeholder="Tên của bạn" />
+          </div>
+        </div>
+
+        <div className="form-row">
+          {/* <div className="form-group">
             <label>Email</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+          </div> */}
+          <div className="form-group1">
+            <label>Email</label>
+            <input
+              className="form-control"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+            />
           </div>
+          {/* <div className="form-group1">
+            <label>Điện thoại</label>
+            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Số điện thoại" required />
+          </div> */}
+          {/* <div className="form-group1">
+            <label>Điện thoại</label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Số điện thoại"
+              required
+              pattern="[0-9]*"
+              inputMode="numeric"
+              onInput={(e) => {
+                e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '');
+                setPhone(e.currentTarget.value);
+              }}
+            />
+          </div> */}
           <div className="form-group1">
             <label>Điện thoại</label>
-            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone number" required />
+            <input
+              className="form-control" // giống ô email
+              type="tel"
+              value={phone}
+              onChange={(e) =>
+                setPhone(e.target.value.replace(/\D/g, '')) // chỉ cho nhập số
+              }
+              placeholder="Số điện thoại"
+              required
+            />
           </div>
         </div>
+         
         <div className="form-group">
           <label>Quốc gia</label>
-          <select>
-            <option>Việt Nam</option>
-          </select>
+          <input list="countries" name="country" defaultValue="Việt Nam" required />
+          <datalist id="countries">
+            <option value="Việt Nam" />
+            <option value="Hoa Kỳ" />
+            <option value="Anh" />
+            <option value="Pháp" />
+            <option value="Đức" />
+            <option value="Nhật Bản" />
+            <option value="Hàn Quốc" />
+            <option value="Singapore" />
+            <option value="Thái Lan" />
+            <option value="Canada" />
+            <option value="Úc" />
+          </datalist>
         </div>
+
         <div className="form-row">
           <div className="form-group">
-            <label>tỉnh  </label>
-            <input type="text" />
+            <label>Tỉnh</label>
+            <input list="provinces" name="province" required />
+            <datalist id="provinces">
+              <option value="An Giang" />
+              <option value="Bắc Ninh" />
+              <option value="Cà Mau" />
+              <option value="Cao Bằng" />
+              <option value="Đắk Lắk" />
+              <option value="Điện Biên" />
+              <option value="Đồng Nai" />
+              <option value="Đồng Tháp" />
+              <option value="Gia Lai" />
+              <option value="Hà Tĩnh" />
+              <option value="Hưng Yên" />
+              <option value="Khánh Hòa" />
+              <option value="Lai Châu" />
+              <option value="Lạng Sơn" />
+              <option value="Lào Cai" />
+              <option value="Lâm Đồng" />
+              <option value="Nghệ An" />
+              <option value="Ninh Bình" />
+              <option value="Phú Thọ" />
+              <option value="Quảng Ngãi" />
+              <option value="Quảng Ninh" />
+              <option value="Quảng Trị" />
+              <option value="Sơn La" />
+              <option value="Tây Ninh" />
+              <option value="Thái Nguyên" />
+              <option value="Thanh Hóa" />
+              <option value="Tuyên Quang" />
+              <option value="Vĩnh Long" />
+            </datalist>
           </div>
+
           <div className="form-group">
             <label>Thành phố</label>
-            <input type="text" />
+            <select required>
+              <option value="Hà Nội">Hà Nội</option>
+              <option value="Hải Phòng">Hải Phòng</option>
+              <option value="Đà Nẵng">Đà Nẵng</option>
+              <option value="Huế">Huế</option>
+              <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+              <option value="Cần Thơ">Cần Thơ</option>
+            </select>
           </div>
         </div>
-        <div className="form-group">
-          <label>Địa chỉ</label>
-          <input 
-          type="text" 
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder='địa chỉ nhận hàng'
-          required
-          />
+
+        <div className="form-row">
+          <div className="form-group1">
+            <label>Địa chỉ</label>
+            <input 
+              type="text" 
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Địa chỉ nhận hàng"
+              required
+            />
+          </div>
         </div>
+
 
         <h3>Phương thức thanh toán</h3>
         <div className="lable">

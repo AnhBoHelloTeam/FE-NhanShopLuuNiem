@@ -56,6 +56,7 @@ const CategoryPage: React.FC = () => {
   return (
     
     <div>
+      {/* <Link to={`/category/${ca}`}></Link> */}
       <h2 style={{ paddingTop: 30 }}>{categoryName}</h2>
 
       {Array.isArray(products) && products.length > 0 ? (

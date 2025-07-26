@@ -59,7 +59,7 @@ const OrderDetail: React.FC = () => {
         }
       } catch (err) {
         console.error('Lỗi khi lấy chi tiết đơn hàng:', err);
-        alert('Có lỗi xảy ra khi lấy chi tiết đơn hàng. Vui lòng thử lại sau.');
+        alert('Có lỗi xảy ra khi tải đơn hàng');
         navigate('/orders');
       } finally {
         setLoading(false);
