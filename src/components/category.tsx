@@ -30,7 +30,6 @@ const CategoryList: React.FC = () => {
       ) : (
           <div className="boder">
         {categories.map((cate) => {
-  console.log('cate._id:', cate._id); // ✅ Log _id
 
   return (
     <div className="O" key={cate._id} onClick={() => {localStorage.setItem('categoryId', cate._id)}}>
@@ -47,7 +46,6 @@ const CategoryList: React.FC = () => {
             className="w-12 h-16 mx-auto mb-2 object-contain"
           />
           <h6 className="font-medium text-sm">{cate.name}</h6>
-          <p className="text-p1">{cate.description}</p>
         </div>
       </Link>
     </div>
