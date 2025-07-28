@@ -23,7 +23,7 @@ import BlogDetail from '../pages/BlogDetail';
 import CategoryPage from '../pages/category';
 import ReturnForm from '../pages/ReturnForm';
 import AdminReturnDetail from '../pages/admin/AdminReturnDetail';
-// import { TokenWatcher } from '../TokenWatcher'
+import { TokenWatcher } from '../TokenWatcher'
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -79,7 +79,7 @@ const AppContent: React.FC = () => {
 const AppRouter: React.FC = () => {
   return (
     <Router>
-      {/* <TokenWatcher /> */}
+      <TokenWatcher />
       <AppContent />
     </Router>
   );
