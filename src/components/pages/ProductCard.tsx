@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     queryFn: async () => {
       const token = localStorage.getItem('token');
       if (!token) return { success: false, likes: [] };
-      const res = await fetch('http://localhost:3001/api/v1/like-lists', {
+      const res = await fetch('https://be-webdoluuniem.onrender.com/api/v1/like-lists', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to fetch likes');
@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     mutationFn: async ({ productId, isLiked }: { productId: string; isLiked: boolean }) => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('Not logged in');
-      const url = `http://localhost:3001/api/v1/like-lists/${productId}`;
+      const url = `https://be-webdoluuniem.onrender.com/api/v1/like-lists/${productId}`;
       const method = isLiked ? 'DELETE' : 'POST';
       const res = await fetch(url, {
         method,
@@ -121,7 +121,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     if (typeof firstImage === 'string') {
       // Nếu là ID, cần fetch URL (giả định endpoint /api/v1/images/:id)
       console.warn('Image is ID, fetching URL might be needed:', firstImage);
-      return `http://localhost:3001/api/v1/images/${firstImage}`; // Placeholder, cần API thực tế
+      return `https://be-webdoluuniem.onrender.com/api/v1/images/${firstImage}`; // Placeholder, cần API thực tế
     }
     return firstImage.image || 'https://via.placeholder.com/150?text=Error'; // Nếu là object
   };

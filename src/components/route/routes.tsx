@@ -27,11 +27,8 @@ import { TokenWatcher } from '../TokenWatcher'
 
 const AppContent: React.FC = () => {
   const location = useLocation();
-  // const noLayoutRoutes = ['', '/dashboard', '/user'];
-  // const hideLayout = noLayoutRoutes.includes(location.pathname);
   const noLayoutRoutes = ['','/dashboard', '/user'];
   const hideLayout = noLayoutRoutes.includes(location.pathname);
-
   const userRole = localStorage.getItem('role'); // sửa lại từ 'admin' thành 'role'
 
   return (

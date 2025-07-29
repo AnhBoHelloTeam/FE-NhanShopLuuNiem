@@ -41,7 +41,7 @@ const fetchWithAuth = async (url: string, options: RequestInit = {}) => {
     Authorization: `Bearer ${token}`,
     ...(options.headers || {}),
   };
-  const response = await fetch(`https://fe-webdoluuniem.onrender.com${url}`, {
+  const response = await fetch(`https://be-webdoluuniem.onrender.com${url}`, {
     ...options,
     headers,
   });
@@ -94,7 +94,7 @@ const UserChatComponent: React.FC<UserChatComponentProps> = ({ productId, produc
       return;
     }
 
-    socketRef.current = io('https://fe-webdoluuniem.onrender.com', { auth: { token } });
+    socketRef.current = io('https://be-webdoluuniem.onrender.com', { auth: { token } });
     socketRef.current.emit('user_connected', userId);
 
     socketRef.current.on('receive-message', (newMessage) => {

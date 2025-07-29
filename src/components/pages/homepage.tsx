@@ -21,14 +21,14 @@ const Home: React.FC = () => {
     const fetchTopRatedAndMostLiked = async () => {
       try {
         const [prodRes, reviewRes, mostLikedRes] = await Promise.all([
-          fetch('https://fe-webdoluuniem.onrender.com/api/v1/products'),
-          fetch('https://fe-webdoluuniem.onrender.com/api/v1/reviews', {
+          fetch('https://be-webdoluuniem.onrender.com/api/v1/products'),
+          fetch('https://be-webdoluuniem.onrender.com/api/v1/reviews', {
             headers: {
               'Content-Type': 'application/json',
               Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
           }),
-          fetch('https://fe-webdoluuniem.onrender.com/api/v1/like-lists/most-liked'),
+          fetch('https://be-webdoluuniem.onrender.com/api/v1/like-lists/most-liked'),
         ]);
 
         // Xử lý sản phẩm nổi bật
@@ -82,12 +82,12 @@ const Home: React.FC = () => {
 
     const fetchCategories = async () => {
       try {
-        const catRes = await fetch('https://fe-webdoluuniem.onrender.com/api/v1/categories');
+        const catRes = await fetch('https://be-webdoluuniem.onrender.com/api/v1/categories');
         const catData = await catRes.json();
         setCategories(catData.data || []);
 
         const promises = catData.data.map(async (cat: any) => {
-          const prodRes = await fetch(`https://fe-webdoluuniem.onrender.com/api/v1/products/category/${cat._id}`);
+          const prodRes = await fetch(`https://be-webdoluuniem.onrender.com/api/v1/products/category/${cat._id}`);
           const prodData = await prodRes.json();
           return { categoryId: cat._id, products: prodData.data?.slice(0, 4) || [] };
         });
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('https://fe-webdoluuniem.onrender.com/api/v1/products');
+        const res = await fetch('https://be-webdoluuniem.onrender.com/api/v1/products');
         const data = await res.json();
         setProducts(data.products || []);
       } catch (err) {
