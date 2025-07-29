@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import '../../../assets/css/Dashboard.css';
 
 const UserManagement = () => {
   const [userList, setUserList] = useState<any[]>([]);

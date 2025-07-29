@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import {CreateProductSuccess, DeleteProductSuccess, UpdateProductSuccess, ConfirmDeleteDialog} from '../../PaymentSuccess';
+import '../../../assets/css/Dashboard.css';
 
 
 const BlogManagement = () => {

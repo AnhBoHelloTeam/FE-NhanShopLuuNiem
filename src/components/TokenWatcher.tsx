@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import refreshAccessToken from './refreshAccessToken';
 import { TokenExpiredModal } from './PaymentSuccess'; // import modal
+import '../assets/css/editproduct.css';
 
 const INACTIVITY_LIMIT = 5 * 60 * 1000;
 const REFRESH_COOLDOWN = 60 * 1000;

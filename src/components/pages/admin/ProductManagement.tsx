@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-// import "../../../assets/css/Dashboard.css";
+import '../../../assets/css/Dashboard.css';
 import { _descriptors } from "chart.js/helpers";
 import {CreateProductSuccess, DeleteProductSuccess, UpdateProductSuccess, ConfirmDeleteDialog} from '../../PaymentSuccess';
 

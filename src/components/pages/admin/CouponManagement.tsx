@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {CreateProductSuccess, DeleteProductSuccess, UpdateProductSuccess, ConfirmDeleteDialog} from '../../PaymentSuccess';
+import '../../../assets/css/Dashboard.css';
 
 const CouponManagement = () => {
   const [couponList, setCouponList] = useState<any[]>([]);

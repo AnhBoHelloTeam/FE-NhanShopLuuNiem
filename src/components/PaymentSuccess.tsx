@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../assets/css/PaymentSuccess.css';
 import '../assets/css/editproduct.css';
-
 interface PaymentSuccessProps {
   onClose?: () => void; // optional: cho phép đóng modal nếu cần
 }

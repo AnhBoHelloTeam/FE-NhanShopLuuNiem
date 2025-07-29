@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaPlus } from 'react-icons/fa';
-// import "../../../assets/css/Dashboard.css";
+import '../../../assets/css/Dashboard.css';
 import { _descriptors } from "chart.js/helpers";
 import {CreateProductSuccess, DeleteProductSuccess, UpdateProductSuccess, ConfirmDeleteDialog} from '../../PaymentSuccess';
 

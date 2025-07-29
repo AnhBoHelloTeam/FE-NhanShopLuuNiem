@@ -23,6 +23,7 @@ import BlogDetail from '../pages/BlogDetail';
 import CategoryPage from '../pages/category';
 import ReturnForm from '../pages/ReturnForm';
 import AdminReturnDetail from '../pages/admin/AdminReturnDetail';
+import '../../assets/css/editproduct.css';
 import { TokenWatcher } from '../TokenWatcher'
 
 const AppContent: React.FC = () => {
