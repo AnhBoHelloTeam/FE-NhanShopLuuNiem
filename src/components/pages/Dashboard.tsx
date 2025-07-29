@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import '../../assets/css/Dashboard.css'
 import AdminChatComponent from './AdminChatComponent'; 
 import AdminOrders from './admin/AdminOrders';
 import AdminEvents from './admin/EventManagement';
