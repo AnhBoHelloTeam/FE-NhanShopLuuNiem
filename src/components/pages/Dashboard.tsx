@@ -184,7 +184,7 @@ const Dashboard = () => {
           color: #1f2937;
         }
 
-        /* .sidebar {
+         .sidebar {
   width: 16rem;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -707,7 +707,7 @@ const Dashboard = () => {
   border-radius: 4px;
   cursor: pointer;
 }
- */
+ 
       `}</style>
     </div>
   );
