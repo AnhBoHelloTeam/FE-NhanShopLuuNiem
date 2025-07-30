@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
     name: "",
     phone: "",
     email: "",
-    message: "",
+    description: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
       title: formData.title,
       phone: formData.phone,
       email: formData.email,
-      message: formData.message,
+      description: formData.description,
     }
       const res = await fetch(`https://be-webdoluuniem.onrender.com/api/v1/contacts`, {
         method: 'POST',
@@ -134,8 +134,8 @@ const Contact: React.FC = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="message">Tin nhắn <span className="required">*</span></label>
-        <textarea id="message" rows={4} placeholder="Nhập nội dung tin nhắn" required value={formData.message} onChange={handleChange}></textarea>
+        <label htmlFor="description">Tin nhắn <span className="required">*</span></label>
+        <textarea id="description" rows={4} placeholder="Nhập nội dung tin nhắn" required value={formData.description} onChange={handleChange}></textarea>
       </div>
 
       <button type="submit">Gửi tin nhắn</button>

@@ -68,7 +68,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard">
+    <div className="dashboard" style={{display:'flex'}}>
       <aside className="sidebar">
         <Link style={{ textDecoration: 'none' }} to="/">
           <div className="sidebar-header">🛒 Cửa Hàng Đặc Sản</div>

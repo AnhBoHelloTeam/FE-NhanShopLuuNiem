@@ -466,10 +466,6 @@ return (
       <div style={{ flex: 2 }}>
         <h4>Thông tin sản phẩm</h4>
         <p>{product.description || 'Đang cập nhật mô tả...'}</p>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <img src="https://via.placeholder.com/100" alt="Ảnh mô tả" />
-          <img src="https://via.placeholder.com/100" alt="Ảnh mô tả" />
-        </div>
 
         {/* Đánh giá sản phẩm */}
         <div style={{ marginTop: 32 }}>
