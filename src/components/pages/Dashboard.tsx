@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Store, LogOut, MessageCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,7 +11,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import '../../assets/css/Dashboard.css'
 import AdminChatComponent from './AdminChatComponent'; 
 import AdminOrders from './admin/AdminOrders';
 import AdminEvents from './admin/EventManagement';
@@ -27,10 +26,9 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 const Dashboard = () => {
   const [userCount, setUserCount] = useState<number>(0);
   const [activeSection, setActiveSection] = useState('dashboard');
-  const [isChatOpen, setIsChatOpen] = useState(false); // Thêm trạng thái để mở chat
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Đăng xuất
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
@@ -38,7 +36,6 @@ const Dashboard = () => {
     navigate('/login');
   };
 
-  // Decode adminId từ token
   const token = localStorage.getItem('token');
   let adminId = '';
   if (token) {
@@ -47,122 +44,50 @@ const Dashboard = () => {
   }
 
   const chartData = {
-    labels: [
-      'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
-      'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC',
-    ],
-    datasets: [
-      {
-        label: 'Activity',
-        data: [100, 150, 200, 180, 250, 220, 280, 300, 270, 320, 340, 360],
-        backgroundColor: '#4f46e5',
-        borderRadius: 4,
-      },
-    ],
+    labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+             'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+    datasets: [{
+      label: 'Activity',
+      data: [100, 150, 200, 180, 250, 220, 280, 300, 270, 320, 340, 360],
+      backgroundColor: '#4f46e5',
+      borderRadius: 4,
+    }],
   };
 
-  // Xử lý khi chọn "Khung chat"
   const handleChatClick = () => {
     setActiveSection('chat');
-    setIsChatOpen(true); // Mở AdminChatComponent
+    setIsChatOpen(true);
   };
 
   return (
-    <div className="dashboard" style={{display:'flex'}}>
+    <div className="dashboard">
       <aside className="sidebar">
         <Link style={{ textDecoration: 'none' }} to="/">
           <div className="sidebar-header">🛒 Cửa Hàng Đặc Sản</div>
         </Link>
         <nav className="sidebar-menu">
-          <div
-            onClick={() => setActiveSection('dashboard')}
-            className={activeSection === 'dashboard' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            📊 Báo cáo
-          </div>
-
-          <div
-            onClick={handleChatClick}
-            className={activeSection === 'chat' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            <MessageCircle size={18} /> Khung chat
-          </div>
-
-          <div
-            onClick={() => setActiveSection('users')}
-            className={activeSection === 'users' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            👥 Quản lý người dùng
-          </div>
-
-          <div
-            onClick={() => setActiveSection('products')}
-            className={activeSection === 'products' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            📦 Quản lý sản phẩm
-          </div>
-
-          <div
-            onClick={() => setActiveSection('orders')}
-            className={activeSection === 'orders' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            🚚 Quản lý đơn hàng
-          </div>
-
-          <div
-            onClick={() => setActiveSection('posts')}
-            className={activeSection === 'posts' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            📝 Quản lý bài viết
-          </div>
-
-          <div
-            onClick={() => setActiveSection('categories')}
-            className={activeSection === 'categories' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            📁 Quản lý danh mục
-          </div>
-
-          <div
-            onClick={() => setActiveSection('coupons')}
-            className={activeSection === 'coupons' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            🏷️ Quản lý mã khuyến mãi
-          </div>
-
-          <div
-            onClick={() => setActiveSection('events')}
-            className={activeSection === 'events' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            🏷️ Quản lý sự kiện
-          </div>
-
-          <div
-            onClick={() => setActiveSection('stores')}
-            className={activeSection === 'stores' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            <Store size={18} /> Gian hàng hợp tác
-          </div>
-
-          <div
-            onClick={() => setActiveSection('reviews')}
-            className={activeSection === 'reviews' ? 'menu-highlight active' : 'menu-highlight'}
-          >
-            <Store size={18} /> Đánh giá sản phẩm
-          </div>
-
+          <div onClick={() => setActiveSection('dashboard')} className={activeSection === 'dashboard' ? 'menu-highlight active' : 'menu-highlight'}>📊 Báo cáo</div>
+          <div onClick={handleChatClick} className={activeSection === 'chat' ? 'menu-highlight active' : 'menu-highlight'}><MessageCircle size={18} /> Khung chat</div>
+          <div onClick={() => setActiveSection('users')} className={activeSection === 'users' ? 'menu-highlight active' : 'menu-highlight'}>👥 Quản lý người dùng</div>
+          <div onClick={() => setActiveSection('products')} className={activeSection === 'products' ? 'menu-highlight active' : 'menu-highlight'}>📦 Quản lý sản phẩm</div>
+          <div onClick={() => setActiveSection('orders')} className={activeSection === 'orders' ? 'menu-highlight active' : 'menu-highlight'}>🚚 Quản lý đơn hàng</div>
+          <div onClick={() => setActiveSection('posts')} className={activeSection === 'posts' ? 'menu-highlight active' : 'menu-highlight'}>📝 Quản lý bài viết</div>
+          <div onClick={() => setActiveSection('categories')} className={activeSection === 'categories' ? 'menu-highlight active' : 'menu-highlight'}>📁 Quản lý danh mục</div>
+          <div onClick={() => setActiveSection('coupons')} className={activeSection === 'coupons' ? 'menu-highlight active' : 'menu-highlight'}>🏷️ Quản lý mã khuyến mãi</div>
+          <div onClick={() => setActiveSection('events')} className={activeSection === 'events' ? 'menu-highlight active' : 'menu-highlight'}>🏷️ Quản lý sự kiện</div>
+          <div onClick={() => setActiveSection('stores')} className={activeSection === 'stores' ? 'menu-highlight active' : 'menu-highlight'}><Store size={18} /> Gian hàng hợp tác</div>
+          <div onClick={() => setActiveSection('reviews')} className={activeSection === 'reviews' ? 'menu-highlight active' : 'menu-highlight'}><Store size={18} /> Đánh giá sản phẩm</div>
           <div onClick={handleLogout} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
             <LogOut size={18} /> Đăng Xuất
           </div>
         </nav>
-
         <div className="sidebar-footer">
           <div>⚙️ Cài đặt</div>
           <div className="user-info">Hoang<br />hoang123@gmail.com</div>
         </div>
       </aside>
 
-      <main className="main-content" style={{border: '1px solid #ccc'}}>
+      <main className="main-content">
         <h1 className="title">
           {activeSection === 'dashboard' && '📈 Thống kê'}
           {activeSection === 'chat' && '💬 Khung chat'}
@@ -175,7 +100,6 @@ const Dashboard = () => {
           {activeSection === 'reviews' && '🏪 Quản lý đánh giá'}
         </h1>
 
-        {/* Nội dung từng phần */}
         {activeSection === 'dashboard' && (
           <>
             <div className="filters">
@@ -209,8 +133,6 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <br />
-
             <div className="n3">
               <div className="card2">
                 <h2>Chủ đề hot</h2>
@@ -228,9 +150,6 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-
-            <br />
-            <br />
 
             <div className="card">
               <h2>Bảng xếp hạng người dùng</h2>
@@ -254,6 +173,18 @@ const Dashboard = () => {
           <AdminChatComponent adminId={adminId} onClose={() => setIsChatOpen(false)} />
         )}
       </main>
+
+      <style jsx>{`
+        /* Gộp tất cả CSS ở đây */
+        .dashboard {
+          display: flex;
+          min-height: 100vh;
+          background: #f9fafb;
+          color: #1f2937;
+        }
+
+        /* ... TẤT CẢ CSS ĐÃ DÁN VÀO ĐÂY ... */
+      `}</style>
     </div>
   );
 };
