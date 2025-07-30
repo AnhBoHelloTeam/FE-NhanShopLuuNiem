@@ -162,7 +162,7 @@ const Dashboard = () => {
         </div>
       </aside>
 
-      <main className="main-content">
+      <main className="main-content" style={{border: '1px solid #ccc'}}>
         <h1 className="title">
           {activeSection === 'dashboard' && '📈 Thống kê'}
           {activeSection === 'chat' && '💬 Khung chat'}
