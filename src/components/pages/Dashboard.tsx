@@ -76,7 +76,6 @@ const Dashboard = () => {
           <div onClick={() => setActiveSection('categories')} className={activeSection === 'categories' ? 'menu-highlight active' : 'menu-highlight'}>📁 Quản lý danh mục</div>
           <div onClick={() => setActiveSection('coupons')} className={activeSection === 'coupons' ? 'menu-highlight active' : 'menu-highlight'}>🏷️ Quản lý mã khuyến mãi</div>
           <div onClick={() => setActiveSection('events')} className={activeSection === 'events' ? 'menu-highlight active' : 'menu-highlight'}>🏷️ Quản lý sự kiện</div>
-          <div onClick={() => setActiveSection('stores')} className={activeSection === 'stores' ? 'menu-highlight active' : 'menu-highlight'}><Store size={18} /> Gian hàng hợp tác</div>
           <div onClick={() => setActiveSection('reviews')} className={activeSection === 'reviews' ? 'menu-highlight active' : 'menu-highlight'}><Store size={18} /> Đánh giá sản phẩm</div>
           <div onClick={handleLogout} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}>
             <LogOut size={18} /> Đăng Xuất
