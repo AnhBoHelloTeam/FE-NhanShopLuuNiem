@@ -132,6 +132,183 @@ export const CreateProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
+      <style {...({ jsx: true } as any)}>{`
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-button:hover {
+  background-color: #43a047;
+}
+
+.success-link {
+  margin-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #4CAF50;
+  margin: 16px 0 8px;
+}
+
+.success-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.token-expired-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.token-expired-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.token-expired-modal h2 {
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.token-expired-modal p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.token-expired-modal button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.token-expired-modal button:hover {
+  background-color: #b71c1c;
+}
+      `}</style>
     </div>
   );
 };
@@ -160,6 +337,183 @@ export const DeleteProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
+            <style {...({ jsx: true } as any)}>{`
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-button:hover {
+  background-color: #43a047;
+}
+
+.success-link {
+  margin-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #4CAF50;
+  margin: 16px 0 8px;
+}
+
+.success-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.token-expired-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.token-expired-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.token-expired-modal h2 {
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.token-expired-modal p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.token-expired-modal button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.token-expired-modal button:hover {
+  background-color: #b71c1c;
+}
+      `}</style>
     </div>
   );
 };
@@ -188,6 +542,183 @@ export const UpdateProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
+            <style {...({ jsx: true } as any)}>{`
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-button:hover {
+  background-color: #43a047;
+}
+
+.success-link {
+  margin-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #4CAF50;
+  margin: 16px 0 8px;
+}
+
+.success-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.token-expired-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.token-expired-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.token-expired-modal h2 {
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.token-expired-modal p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.token-expired-modal button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.token-expired-modal button:hover {
+  background-color: #b71c1c;
+}
+      `}</style>
     </div>
   );
 };
@@ -224,6 +755,183 @@ export const ConfirmDeleteDialog: React.FC<ConfirmDeleteProps> = ({
           </button>
         </div>
       </div>
+            <style {...({ jsx: true } as any)}>{`
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-button:hover {
+  background-color: #43a047;
+}
+
+.success-link {
+  margin-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #4CAF50;
+  margin: 16px 0 8px;
+}
+
+.success-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.token-expired-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.token-expired-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.token-expired-modal h2 {
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.token-expired-modal p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.token-expired-modal button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.token-expired-modal button:hover {
+  background-color: #b71c1c;
+}
+      `}</style>
     </div>
   );
 };
@@ -236,6 +944,183 @@ export const TokenExpiredModal: React.FC<ConfirmDeleteProps> = ({ onConfirm }) =
         <p>Vui lòng đăng nhập lại để tiếp tục.</p>
         <button onClick={onConfirm}>Đăng nhập lại</button>
       </div>
+            <style {...({ jsx: true } as any)}>{`
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.success-button:hover {
+  background-color: #43a047;
+}
+
+.success-link {
+  margin-top: 15px;
+  color: #000;
+  font-size: 14px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.success-message {
+  font-size: 24px;
+  color: #4CAF50;
+  margin: 16px 0 8px;
+}
+
+.success-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.success-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.token-expired-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.token-expired-modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.token-expired-modal h2 {
+  margin-bottom: 10px;
+  color: #d32f2f;
+}
+
+.token-expired-modal p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.token-expired-modal button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.token-expired-modal button:hover {
+  background-color: #b71c1c;
+}
+      `}</style>
     </div>
   );
 };
