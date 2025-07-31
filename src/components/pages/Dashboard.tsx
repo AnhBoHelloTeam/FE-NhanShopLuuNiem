@@ -63,7 +63,7 @@ const Dashboard = () => {
 
   // Xử lý khi chọn "Khung chat"
   const handleChatClick = () => {
-    setActiveSection('chat');
+    setActiveSection('chat'); 
     setIsChatOpen(true); // Mở AdminChatComponent
   };
 
