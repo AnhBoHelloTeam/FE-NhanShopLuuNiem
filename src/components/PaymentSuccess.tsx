@@ -132,7 +132,7 @@ export const CreateProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
-      <style {...({ jsx: true } as any)}>{`
+      <style>{`
       .payment-success-overlay {
   position: fixed;
   top: 0;
@@ -455,7 +455,7 @@ export const DeleteProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
-            <style {...({ jsx: true } as any)}>{`
+      <style>{`
 .success-container {
   position: fixed;
   top: 0;
@@ -660,7 +660,7 @@ export const UpdateProductSuccess: React.FC<SuccessPageProps> = ({
           {buttonText}
         </button>
       </div>
-            <style {...({ jsx: true } as any)}>{`
+      <style >{`
 .success-container {
   position: fixed;
   top: 0;
@@ -991,7 +991,7 @@ export const ConfirmDeleteDialog: React.FC<ConfirmDeleteProps> = ({
           </button>
         </div>
       </div>
-            <style {...({ jsx: true } as any)}>{`
+      <style>{`
 .success-container {
   position: fixed;
   top: 0;
@@ -1298,7 +1298,7 @@ export const TokenExpiredModal: React.FC<ConfirmDeleteProps> = ({ onConfirm }) =
         <p>Vui lòng đăng nhập lại để tiếp tục.</p>
         <button onClick={onConfirm}>Đăng nhập lại</button>
       </div>
-            <style {...({ jsx: true } as any)}>{`
+      <style>{`
             .payment-success-overlay {
   position: fixed;
   top: 0;
@@ -1417,7 +1417,7 @@ export const TokenExpiredModal: React.FC<ConfirmDeleteProps> = ({ onConfirm }) =
   color: #444;
   margin-top: 10px;
 }
-  
+
 .success-container {
   position: fixed;
   top: 0;
